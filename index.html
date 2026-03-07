@@ -30,43 +30,55 @@
         .bg-gold { background-color: var(--gold); }
         .border-gold { border-color: var(--gold); }
 
-        .logo-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          font-size: 80px; /* Adjust size as needed */
-        }
 
-  /* The stylized 'L' */
+  /* Container to hold the overlapping letters */
+  .logo-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 180px;  /* Adjust based on your preferred size */
+    height: 150px; 
+    margin-bottom: 10px;
+  }
+
+  /* The stylized 'L' - Solid and Bold */
   .logo-l {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
+    font-size: 120px;
     color: #000000;
-    line-height: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
   }
 
-  /* The stylized 'V' */
+  /* The stylized 'V' - Elegant and Overlapping */
   .logo-v {
     font-family: 'Great Vibes', cursive;
+    font-size: 140px;
     position: absolute;
-    left: 0.4em; /* Overlaps the V onto the L */
-    top: 0.1em;
-    font-size: 1.1em;
+    left: 45%; /* Pulls it horizontally over the L */
+    top: 45%;  /* Adjusts vertical overlap */
+    transform: translate(-30%, -40%);
+    z-index: 2; /* Keeps the V on top */
     
-    /* Gold Gradient Effect */
-    background: linear-gradient(to bottom, #d4af37 0%, #f9f295 45%, #b8860b 100%);
+    /* Premium Gold Gradient */
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
   }
 
-  .business-name {
+  .business-title {
     font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 18px;
-    margin-top: 10px;
+    color: #333;
+    margin-top: 5px;
   }
+
         
         /* Smooth scrolling for language toggle */
         html { scroll-behavior: smooth; }
@@ -90,13 +102,15 @@
     </nav>
 
     <header class="pt-20 pb-10 text-center">
-        <div style="text-align: center;">
-          <div class="logo-container">
-            <span class="logo-l">L</span><span class="logo-v">V</span>
-         </div>
-         <div class="business-name">
-           Gestão e Assessoria
-         </div>
+        <div style="text-align: center; padding: 40px;">
+           <div class="logo-wrapper">
+             <span class="logo-l">L</span>
+             <span class="logo-v">V</span>
+           </div>
+       <h1 class="business-title">Gestão e Assessoria</h1>
+       <p style="font-family: 'Playfair Display'; font-style: italic; color: #888; letter-spacing: 1px;">
+         Assessoria Migratória de Alto Padrão
+       </p>
        </div>
        <!-- <div class="inline-block border border-black p-4 mb-4">
             <img src="villalba_logo.jpg">
